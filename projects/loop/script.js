@@ -1,4 +1,3 @@
-
 const rewards=[{id:"discount",name:"$15 off your order",points:1200,discount:15},{id:"shipping",name:"Free shipping",points:500,discount:8},{id:"unavailable",name:"$25 off your order",points:2200,discount:25}];let view="discover",chosen=null,redeemed=false;const $=id=>document.getElementById(id);
 function navigate(v){view=v;document.querySelectorAll("[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===v));render()}
 function render(){let reward=rewards.find(r=>r.id===chosen);$("selectedValue").textContent=reward?reward.name.split(" ")[0]:"None";$("remaining").textContent=(1450-(redeemed&&reward?reward.points:0)).toLocaleString();let body="";

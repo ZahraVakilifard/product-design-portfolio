@@ -1,4 +1,3 @@
-
 const cohorts={
 new:{title:"First-time buyers",count:[2480,7310],rate:[28,31],days:[46,44]},
 repeat:{title:"Repeat buyers",count:[1260,3810],rate:[54,57],days:[29,28]},

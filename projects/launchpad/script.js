@@ -1,4 +1,3 @@
-
 let step=0,goal="repeat",name="The Good Club",earn=5,amount=10,min=50,active=false;const $=id=>document.getElementById(id);
 const steps=["Start with a goal.","Define the rules.","See what shoppers see.","Ready to activate?"];
 function validate(){if(!name.trim())return "Enter a program name.";if(!Number.isFinite(earn)||earn<1||earn>20)return "Points per dollar must be between 1 and 20.";if(!Number.isFinite(amount)||amount<1||amount>100)return "Reward must be between $1 and $100.";if(!Number.isFinite(min)||min<amount)return "Minimum order must be at least the reward amount.";return null}
