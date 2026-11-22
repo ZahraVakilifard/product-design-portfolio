@@ -1,101 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>PULSE — Campaign Studio Case Study | Zahra Vakilifard</title>
-  <link rel="stylesheet" href="../shared.css">
-  <link rel="stylesheet" href="../case-study.css">
-  <style>
-    body{--bg:#f8efe5;--accent:#ef5b36}
-    .studio{display:grid;grid-template-columns:360px 1fr;gap:22px;padding-bottom:80px}
-    .controls{align-self:start}
-    .controls label{display:block;margin:17px 0;font-weight:700;font-size:13px}
-    .controls input,.controls select{width:100%;margin-top:7px}
-    .preview{min-height:530px;display:grid;place-items:center;overflow:hidden;background:#ffdfd3;border-radius:24px;padding:28px}
-    .poster{position:relative;max-width:560px;width:100%;aspect-ratio:4/4.3;padding:36px;overflow:hidden;border-radius:9px;background:var(--poster,#ff633c);color:var(--text,#221915);display:flex;flex-direction:column;justify-content:space-between;box-shadow:15px 22px 0 #2222}
-    .poster:before{content:"";position:absolute;width:70%;aspect-ratio:1;border:24px solid currentColor;border-radius:50%;opacity:.16;right:-23%;top:10%;transform:rotate(-25deg)}
-    .poster .big{font:800 clamp(48px,6vw,90px)/.92 'Space Grotesk';letter-spacing:-.075em;max-width:480px;position:relative}
-    .poster .foot{position:relative;display:flex;justify-content:space-between;gap:20px;font-weight:700}
-    .swatches{display:flex;gap:10px}
-    .swatch{width:36px;height:36px;border:3px solid #fff;box-shadow:0 0 0 1px #aaa;border-radius:50%}
-    .swatch[aria-pressed=true]{outline:3px solid #171a20;outline-offset:2px}
-    .steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
-    .steps button{background:white;border:1px solid #ddd;padding:9px;border-radius:9px}
-    @media(max-width:850px){.studio{grid-template-columns:1fr}}
-  
-/* PULSE / editorial creative direction canvas */
-body{--bg:#fff5eb;--ink:#281a19;--muted:#846e66;--line:#f1d6c8;--accent:#e54a28;background:linear-gradient(155deg,#fff5eb,#ffe9d9 55%,#fff6ed)}
-.top{border-bottom:2px solid #281a19}.hero{padding:100px 0 75px;position:relative}.hero:after{content:'04';position:absolute;right:1%;top:20px;font:900 clamp(140px,22vw,320px)/1 'Space Grotesk';letter-spacing:-.12em;color:#ffcfb8;z-index:-1}.hero h1{font-size:clamp(62px,8.7vw,130px);max-width:900px;text-transform:uppercase;line-height:.88;letter-spacing:-.085em}.hero .lede{max-width:610px}
-#studio{grid-template-columns:330px minmax(0,1fr);gap:0;background:#241915;border:2px solid #241915;border-radius:8px;overflow:hidden;padding:0;margin:20px 0 90px;box-shadow:18px 20px 0 #e8b9a2}#studio .controls{background:#fff9f1;border-radius:0;border:0;padding:35px 28px;min-height:630px}#studio .controls h2{font-size:43px;line-height:1}#studio .controls label{border-top:1px solid #edd9cc;padding-top:13px}#studio .controls select,#studio .controls input{border-radius:3px}#studio .preview{border-radius:0;min-height:660px;background:repeating-linear-gradient(135deg,#edb6a5,#edb6a5 2px,#f3c7b6 2px,#f3c7b6 22px);padding:45px}#studio .poster{box-shadow:24px 28px 0 #25191755;border-radius:0;transition:background .25s,color .25s,aspect-ratio .3s,max-width .3s;outline:1px solid #1b100c30}#studio .poster:before{border-width:40px;opacity:.22}#studio .poster .big{font-size:clamp(40px,5vw,80px);text-transform:uppercase}#studio .poster .foot{border-top:2px solid currentColor;padding-top:16px}#studio .swatch{border-radius:0;width:43px;height:43px}#studio .steps button{border-radius:3px}#studio .eyebrow{color:#e54a28}#studio .poster .eyebrow{color:inherit}
-@media(max-width:900px){#studio{grid-template-columns:1fr}#studio .controls{min-height:0}#studio .preview{min-height:530px}}@media(max-width:560px){#studio{box-shadow:8px 10px 0 #e8b9a2}#studio .controls{padding:23px}#studio .preview{padding:22px}#studio .poster{padding:22px}#studio .poster .big{font-size:clamp(30px,9vw,55px)}}
-
-</style>
-</head>
-<body>
-<div class="wrap">
-  <header class="top">
-    <a class="brand" href="../../index.html">← ZAHRA VAKILIFARD / PULSE</a>
-    <nav>
-      <a href="#studio">Prototype</a>
-      <a href="#case-study">Case study</a>
-      <a href="https://www.figma.com/design/hUpxsZ1pSLglLUM1TrJvQl/Zahra-Vakilifard---Product-Design-System---Case-Studies--2026-?node-id=0-1&t=5sNCKHK9g3HgN695-1" target="_blank" rel="noopener noreferrer">Figma ↗</a>
-      <a href="../../index.html#work">All work</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="eyebrow">04 / Brand systems / Marketing experience</div>
-    <h1>Make the moment matter.</h1>
-    <p class="lede">A campaign design studio for a fictional loyalty brand. Explore how one flexible visual system adapts across audiences and messages.</p>
-    <span class="pill">Interactive campaign art direction</span>
-    <span class="pill">Concept project</span>
-  </section>
-
-  <div class="studio" id="studio">
-    <section class="panel controls">
-      <div class="eyebrow">Campaign controls</div>
-      <h2>Design the message.</h2>
-      <label>Audience
-        <select id="audience">
-          <option value="new">New members</option>
-          <option value="return">Returning customers</option>
-          <option value="vip">VIP members</option>
-        </select>
-      </label>
-      <label>Headline tone
-        <select id="tone">
-          <option value="bold">Bold</option>
-          <option value="warm">Warm</option>
-          <option value="minimal">Minimal</option>
-        </select>
-      </label>
-      <label>Offer amount <output id="offerOut">$20</output>
-        <input id="offer" type="range" min="5" max="50" step="5" value="20">
-      </label>
-      <p class="note">Color direction</p>
-      <div class="swatches">
-        <button class="swatch" style="background:#ff633c" data-theme="coral" aria-label="Coral theme" aria-pressed="true"></button>
-        <button class="swatch" style="background:#d2f26a" data-theme="lime" aria-label="Lime theme" aria-pressed="false"></button>
-        <button class="swatch" style="background:#3024a5" data-theme="violet" aria-label="Violet theme" aria-pressed="false"></button>
-      </div>
-      <div class="steps">
-        <button id="square">Square layout</button>
-        <button id="story">Story layout</button>
-      </div>
-      <div id="feedback" class="notice" aria-live="polite">Edit controls to explore the visual system.</div>
-    </section>
-
-    <section class="preview">
-      <div class="poster" id="poster">
-        <div class="eyebrow" style="color:inherit">PULSE / GOOD THINGS RETURN</div>
-        <div class="big" id="headline">A LITTLE EXTRA. JUST FOR YOU.</div>
-        <div class="foot"><span id="offerText">$20 OFF</span><span>MAKE IT COUNT ↗</span></div>
-      </div>
-    </section>
-  </div>
-
-  <section id="case-study" class="deep-case">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="PULSE — interactive campaign creative studio and product design case study"><title>PULSE — Campaign Studio | Zahra Vakilifard</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="topbar"><a class="brand" href="../../index.html">← ZAHRA VAKILIFARD <span>/ PULSE</span></a><nav><a href="#studio">Studio</a><a href="#case-study">Case study</a><a href="https://www.figma.com/design/hUpxsZ1pSLglLUM1TrJvQl/Zahra-Vakilifard---Product-Design-System---Case-Studies--2026-?node-id=0-1&t=5sNCKHK9g3HgN695-1" target="_blank" rel="noopener">Figma ↗</a><a href="../../index.html#work">All work</a></nav></header>
+<main><section class="intro"><div class="eyebrow">04 / BRAND SYSTEMS / INTERACTIVE CONCEPT</div><div class="intro-grid"><h1>One idea.<br><em>Endless energy.</em></h1><div><p>A live campaign design studio. Shape a message, switch formats, compare creative directions and export an editable SVG — all with illustrative content.</p><div class="chips"><span>Creative direction</span><span>Live artboard</span><span>SVG export</span></div></div></div></section>
+<section class="studio-shell" id="studio"><div class="studio-top"><div><span class="eyebrow">PULSE / CREATIVE LAB</span><h2>Campaign playground <span class="live-dot">● LIVE</span></h2></div><div class="toolbar"><button id="randomize" class="toolbtn">↝ Shuffle direction</button><button id="reset" class="toolbtn">Reset</button><button id="download" class="primary">↓ Export SVG</button></div></div>
+<div class="workspace"><aside class="controls"><div class="panel-heading"><span>01 / CAMPAIGN BRIEF</span><span>EDITABLE</span></div><label for="audience">Audience</label><select id="audience"><option value="new">New members</option><option value="return" selected>Returning customers</option><option value="vip">VIP members</option></select><label for="tone">Tone of voice</label><select id="tone"><option value="bold" selected>Bold & expressive</option><option value="warm">Warm & welcoming</option><option value="minimal">Minimal & direct</option></select><label for="offer">Offer value <output id="offerOut">$20</output></label><input id="offer" type="range" min="5" max="50" step="5" value="20"><div class="range-label"><span>$5</span><span>$50</span></div><label for="customHeadline">Custom headline <small>(optional)</small></label><textarea id="customHeadline" rows="2" maxlength="68" placeholder="Use suggested campaign copy"></textarea><div class="field-hint"><span id="charCount">0 / 68</span><button id="useSuggested" class="textbtn">Use suggested copy</button></div><div class="divider"></div><div class="panel-heading"><span>02 / ART DIRECTION</span><span>LIVE TOKENS</span></div><label>Color system</label><div class="themes" role="group" aria-label="Color themes"><button class="theme active" data-theme="coral" aria-pressed="true"><i style="background:#ff6545"></i> Coral</button><button class="theme" data-theme="lime" aria-pressed="false"><i style="background:#d5f66a"></i> Lime</button><button class="theme" data-theme="violet" aria-pressed="false"><i style="background:#3426a5"></i> Violet</button></div><label>Graphic treatment</label><div class="segmented" role="group" aria-label="Graphic treatment"><button data-art="orbit" class="active" aria-pressed="true">Orbit</button><button data-art="type" aria-pressed="false">Type</button><button data-art="stripes" aria-pressed="false">Stripes</button></div><label>Placement</label><div class="segmented" role="group" aria-label="Placement"><button data-format="square" class="active" aria-pressed="true">1:1 Feed</button><button data-format="story" aria-pressed="false">9:16 Story</button><button data-format="banner" aria-pressed="false">Wide</button></div></aside>
+<div class="preview-column"><div class="preview-header"><span><span class="status"></span> LIVE ARTBOARD <span id="sizeLabel">1080 × 1080</span></span><span id="variantName">CORAL / ORBIT</span></div><div class="artboard-wrap"><div class="artboard square" id="artboard" role="img" aria-label="Live campaign preview"><div class="graphic orbit" id="graphic"><span></span><span></span><span></span></div><div class="poster-head"><span class="logo-mark">P<span class="logo-dot">●</span>ULSE</span><span id="posterAudience">MEMBER EXCLUSIVE / 001</span></div><div class="poster-center"><div class="poster-kicker" id="posterKicker">GOOD THINGS RETURN</div><div class="poster-title" id="headline">A LITTLE EXTRA. JUST FOR YOU.</div></div><div class="poster-foot"><div><span class="offer-prefix">YOUR NEXT REWARD</span><strong id="offerText">$20 OFF</strong></div><div class="cta">MAKE IT COUNT <span>↗</span></div></div><div class="poster-index">PULSE — CAMPAIGN SERIES / 2026</div></div></div><div class="preview-bottom"><div class="notice" id="feedback" aria-live="polite">Live preview ready. Adjust controls to explore the system.</div><button id="copy" class="toolbtn">Copy campaign copy</button></div><div class="variant-panel"><div class="variant-head"><div><span class="eyebrow">03 / QUICK DIRECTIONS</span><h3>Compare creative routes.</h3></div><span>Tap to apply</span></div><div class="variant-grid"><button data-preset="launch"><span class="mini-art coral">HELLO<br>AGAIN<span>↗</span></span><strong>01 / Launch energy</strong><small>Coral · Bold · Orbit</small></button><button data-preset="fresh"><span class="mini-art lime">GOOD<br>THINGS<span>✳</span></span><strong>02 / Fresh perspective</strong><small>Lime · Warm · Stripes</small></button><button data-preset="editorial"><span class="mini-art violet">FOR<br>YOU<span>●</span></span><strong>03 / Editorial</strong><small>Violet · Minimal · Type</small></button></div></div></div></div></section>
+<section class="story-intro"><span class="eyebrow">BEHIND THE SYSTEM</span><h2>Not just a poster.<br><em>A repeatable language.</em></h2><p>The prototype explores how a small set of rules can generate distinct campaigns without losing brand recognition. All results and campaign content are illustrative.</p></section>
+<section id="case-study" class="deep-case">
     <div class="deep-intro">
       <span class="eyebrow">THE CASE STUDY / SELF-INITIATED CONCEPT</span>
       <h2>Build a campaign system that adapts without losing its voice.</h2>
@@ -203,11 +113,5 @@ body{--bg:#fff5eb;--ink:#281a19;--muted:#846e66;--line:#f1d6c8;--accent:#e54a28;
     </div>
   </section>
 
-  <footer class="footer">
-    <span>© Zahra Vakilifard · PULSE concept</span>
-    <a href="../../index.html">Back to portfolio ↑</a>
-  </footer>
-</div>
-<script src="script.js"></script>
-</body>
-</html>
+  
+</main><footer class="footer"><span>© Zahra Vakilifard · PULSE self-initiated concept</span><a href="../../index.html#work">Back to all projects ↑</a></footer><script src="script.js"></script></body></html>

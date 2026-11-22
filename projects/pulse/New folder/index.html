@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PULSE — Campaign Studio Case Study | Zahra Vakilifard</title>
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="../case-study.css">
+  <style>
+    body{--bg:#f8efe5;--accent:#ef5b36}
+    .studio{display:grid;grid-template-columns:360px 1fr;gap:22px;padding-bottom:80px}
+    .controls{align-self:start}
+    .controls label{display:block;margin:17px 0;font-weight:700;font-size:13px}
+    .controls input,.controls select{width:100%;margin-top:7px}
+    .preview{min-height:530px;display:grid;place-items:center;overflow:hidden;background:#ffdfd3;border-radius:24px;padding:28px}
+    .poster{position:relative;max-width:560px;width:100%;aspect-ratio:4/4.3;padding:36px;overflow:hidden;border-radius:9px;background:var(--poster,#ff633c);color:var(--text,#221915);display:flex;flex-direction:column;justify-content:space-between;box-shadow:15px 22px 0 #2222}
+    .poster:before{content:"";position:absolute;width:70%;aspect-ratio:1;border:24px solid currentColor;border-radius:50%;opacity:.16;right:-23%;top:10%;transform:rotate(-25deg)}
+    .poster .big{font:800 clamp(48px,6vw,90px)/.92 'Space Grotesk';letter-spacing:-.075em;max-width:480px;position:relative}
+    .poster .foot{position:relative;display:flex;justify-content:space-between;gap:20px;font-weight:700}
+    .swatches{display:flex;gap:10px}
+    .swatch{width:36px;height:36px;border:3px solid #fff;box-shadow:0 0 0 1px #aaa;border-radius:50%}
+    .swatch[aria-pressed=true]{outline:3px solid #171a20;outline-offset:2px}
+    .steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+    .steps button{background:white;border:1px solid #ddd;padding:9px;border-radius:9px}
+    @media(max-width:850px){.studio{grid-template-columns:1fr}}
+  
+/* PULSE / editorial creative direction canvas */
+body{--bg:#fff5eb;--ink:#281a19;--muted:#846e66;--line:#f1d6c8;--accent:#e54a28;background:linear-gradient(155deg,#fff5eb,#ffe9d9 55%,#fff6ed)}
+.top{border-bottom:2px solid #281a19}.hero{padding:100px 0 75px;position:relative}.hero:after{content:'04';position:absolute;right:1%;top:20px;font:900 clamp(140px,22vw,320px)/1 'Space Grotesk';letter-spacing:-.12em;color:#ffcfb8;z-index:-1}.hero h1{font-size:clamp(62px,8.7vw,130px);max-width:900px;text-transform:uppercase;line-height:.88;letter-spacing:-.085em}.hero .lede{max-width:610px}
+#studio{grid-template-columns:330px minmax(0,1fr);gap:0;background:#241915;border:2px solid #241915;border-radius:8px;overflow:hidden;padding:0;margin:20px 0 90px;box-shadow:18px 20px 0 #e8b9a2}#studio .controls{background:#fff9f1;border-radius:0;border:0;padding:35px 28px;min-height:630px}#studio .controls h2{font-size:43px;line-height:1}#studio .controls label{border-top:1px solid #edd9cc;padding-top:13px}#studio .controls select,#studio .controls input{border-radius:3px}#studio .preview{border-radius:0;min-height:660px;background:repeating-linear-gradient(135deg,#edb6a5,#edb6a5 2px,#f3c7b6 2px,#f3c7b6 22px);padding:45px}#studio .poster{box-shadow:24px 28px 0 #25191755;border-radius:0;transition:background .25s,color .25s,aspect-ratio .3s,max-width .3s;outline:1px solid #1b100c30}#studio .poster:before{border-width:40px;opacity:.22}#studio .poster .big{font-size:clamp(40px,5vw,80px);text-transform:uppercase}#studio .poster .foot{border-top:2px solid currentColor;padding-top:16px}#studio .swatch{border-radius:0;width:43px;height:43px}#studio .steps button{border-radius:3px}#studio .eyebrow{color:#e54a28}#studio .poster .eyebrow{color:inherit}
+@media(max-width:900px){#studio{grid-template-columns:1fr}#studio .controls{min-height:0}#studio .preview{min-height:530px}}@media(max-width:560px){#studio{box-shadow:8px 10px 0 #e8b9a2}#studio .controls{padding:23px}#studio .preview{padding:22px}#studio .poster{padding:22px}#studio .poster .big{font-size:clamp(30px,9vw,55px)}}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../../index.html">← ZAHRA VAKILIFARD / PULSE</a>
+    <nav>
+      <a href="#studio">Prototype</a>
+      <a href="#case-study">Case study</a>
+      <a href="https://www.figma.com/design/hUpxsZ1pSLglLUM1TrJvQl/Zahra-Vakilifard---Product-Design-System---Case-Studies--2026-?node-id=0-1&t=5sNCKHK9g3HgN695-1" target="_blank" rel="noopener noreferrer">Figma ↗</a>
+      <a href="../../index.html#work">All work</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">04 / Brand systems / Marketing experience</div>
+    <h1>Make the moment matter.</h1>
+    <p class="lede">A campaign design studio for a fictional loyalty brand. Explore how one flexible visual system adapts across audiences and messages.</p>
+    <span class="pill">Interactive campaign art direction</span>
+    <span class="pill">Concept project</span>
+  </section>
+
+  <div class="studio" id="studio">
+    <section class="panel controls">
+      <div class="eyebrow">Campaign controls</div>
+      <h2>Design the message.</h2>
+      <label>Audience
+        <select id="audience">
+          <option value="new">New members</option>
+          <option value="return">Returning customers</option>
+          <option value="vip">VIP members</option>
+        </select>
+      </label>
+      <label>Headline tone
+        <select id="tone">
+          <option value="bold">Bold</option>
+          <option value="warm">Warm</option>
+          <option value="minimal">Minimal</option>
+        </select>
+      </label>
+      <label>Offer amount <output id="offerOut">$20</output>
+        <input id="offer" type="range" min="5" max="50" step="5" value="20">
+      </label>
+      <p class="note">Color direction</p>
+      <div class="swatches">
+        <button class="swatch" style="background:#ff633c" data-theme="coral" aria-label="Coral theme" aria-pressed="true"></button>
+        <button class="swatch" style="background:#d2f26a" data-theme="lime" aria-label="Lime theme" aria-pressed="false"></button>
+        <button class="swatch" style="background:#3024a5" data-theme="violet" aria-label="Violet theme" aria-pressed="false"></button>
+      </div>
+      <div class="steps">
+        <button id="square">Square layout</button>
+        <button id="story">Story layout</button>
+      </div>
+      <div id="feedback" class="notice" aria-live="polite">Edit controls to explore the visual system.</div>
+    </section>
+
+    <section class="preview">
+      <div class="poster" id="poster">
+        <div class="eyebrow" style="color:inherit">PULSE / GOOD THINGS RETURN</div>
+        <div class="big" id="headline">A LITTLE EXTRA. JUST FOR YOU.</div>
+        <div class="foot"><span id="offerText">$20 OFF</span><span>MAKE IT COUNT ↗</span></div>
+      </div>
+    </section>
+  </div>
+
+  <section id="case-study" class="deep-case">
+    <div class="deep-intro">
+      <span class="eyebrow">THE CASE STUDY / SELF-INITIATED CONCEPT</span>
+      <h2>Build a campaign system that adapts without losing its voice.</h2>
+      <p>Below is the design rationale for the working prototype above. This is a proposed solution, not a commissioned project or a validated user-research outcome.</p>
+    </div>
+
+    <div class="deep-meta">
+      <div><span class="micro">AUDIENCE</span><p>Small brand teams preparing multiple campaign variants across social and on-site placements.</p></div>
+      <div><span class="micro">DESIGN GOAL</span><p>Choose an audience, adjust messaging, change a visual direction, and preview square or vertical creative.</p></div>
+      <div><span class="micro">CONSTRAINTS</span><p>Different aspect ratios, text length, contrast, brand recognition, and consistent offer hierarchy.</p></div>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">01 / THE CHALLENGE</span>
+      <h2>What needs to change?</h2>
+      <p class="lead">Marketing assets often drift apart as audiences, offers, and formats multiply. The challenge is to keep a recognizable brand expression while allowing purposeful variation.</p>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">02 / DESIGN PRINCIPLES</span>
+      <h2>Rules for the experience.</h2>
+      <div class="deep-grid">
+        <article class="deep-card"><span class="micro">01</span><h3>System over one-off</h3><p>Use a small set of expressive rules rather than unrelated posters.</p></article>
+        <article class="deep-card"><span class="micro">02</span><h3>Message first</h3><p>Preserve the offer and call-to-action hierarchy across variants.</p></article>
+        <article class="deep-card"><span class="micro">03</span><h3>Make variation intentional</h3><p>Expose audience, tone, color, and format as explicit decisions.</p></article>
+      </div>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">03 / INFORMATION ARCHITECTURE</span>
+      <h2>One connected journey.</h2>
+      <ol class="flow-diagram">
+        <li><span>01</span><strong>Select audience</strong></li>
+        <li><span>02</span><strong>Set voice</strong></li>
+        <li><span>03</span><strong>Choose color</strong></li>
+        <li><span>04</span><strong>Adjust offer</strong></li>
+        <li><span>05</span><strong>Preview format</strong></li>
+      </ol>
+      <p class="note">Conceptual task flow, represented by the interactive prototype above. No participant testing has been conducted.</p>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">04 / DESIGN EXPLORATION</span>
+      <h2>Choices and trade-offs.</h2>
+      <div class="decisions">
+        <article class="decision"><div class="micro">DECISION 01</div><h3>Audience-specific copy</h3><p>Copy variants give the system a purpose beyond cosmetic theme changes.</p><p class="tradeoff"><strong>Trade-off:</strong> Risk: actual campaigns need copy review and brand governance.</p></article>
+        <article class="decision"><div class="micro">DECISION 02</div><h3>Limited palettes</h3><p>Three controlled themes demonstrate range while maintaining a family resemblance.</p><p class="tradeoff"><strong>Trade-off:</strong> Risk: some combinations may need more contrast testing.</p></article>
+        <article class="decision"><div class="micro">DECISION 03</div><h3>Format switch</h3><p>A story layout demonstrates responsive art direction, not just scaling.</p><p class="tradeoff"><strong>Trade-off:</strong> Risk: a production tool needs safe areas and text overflow handling.</p></article>
+      </div>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">05 / DESIGN ITERATION</span>
+      <h2>From static templates to token-driven responsive art direction.</h2>
+      <div class="grid2">
+        <div class="deep-card"><span class="micro">V1 / INITIAL WIREFRAME</span><h3>Fixed-Ratio Static Layouts</h3><p>Initial concepts required separate templates per social channel, causing offer callouts and contrast ratios to break when switching to vertical story formats.</p></div>
+        <div class="deep-card"><span class="micro">V2 / FINAL SOLUTION</span><h3>Tokenized Multi-Ratio Engine</h3><p>Unified typography scale, paired contrast tokens, and layout ratios so any audience or tone variant maintains brand hierarchy across both 4:4 and 9:16 formats.</p></div>
+      </div>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">06 / VISUAL SYSTEM</span>
+      <h2>Small system, consistent language.</h2>
+      <div class="token-grid">
+        <div class="token"><span style="background:#FA5C38"></span><strong>Coral</strong><small>#FA5C38</small></div>
+        <div class="token"><span style="background:#D2F26A"></span><strong>Lime</strong><small>#D2F26A</small></div>
+        <div class="token"><span style="background:#3024A5"></span><strong>Violet</strong><small>#3024A5</small></div>
+        <div class="token"><span style="background:#241811"></span><strong>Ink</strong><small>#241811</small></div>
+      </div>
+      <div class="system-demo">
+        <div><span class="micro">TYPE SCALE</span><strong class="system-display">Aa / 01</strong><span>Space Grotesk — expressive display</span><span>DM Sans — clear interface copy</span></div>
+        <div><span class="micro">INTERACTION PRINCIPLES</span><span>Clear selected and unselected states</span><span>Visible feedback after an action</span><span>Keyboard focus and mobile layouts</span></div>
+      </div>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">07 / STATES &amp; EDGE CASES</span>
+      <h2>Beyond the happy path.</h2>
+      <ul class="state-list">
+        <li>New / returning / VIP audience</li>
+        <li>Bold / warm / minimal voice</li>
+        <li>Square / story format</li>
+        <li>Low / high offer value</li>
+      </ul>
+    </div>
+
+    <div class="deep-section">
+      <span class="micro">08 / VALIDATION PLAN</span>
+      <h2>What we would test next.</h2>
+      <ul class="test-list">
+        <li>Can viewers recognize the same brand across formats?</li>
+        <li>Is the offer understandable within a quick glance?</li>
+        <li>Does copy remain readable on narrow screens?</li>
+      </ul>
+      <p><strong>Success signals to measure:</strong> Offer comprehension, perceived consistency, contrast and layout audit.</p>
+      <p class="note">These are proposed evaluation criteria. No participant interviews, test results, conversion lift, or client impact are represented as completed work.</p>
+    </div>
+
+    <div class="deep-end">
+      <span class="eyebrow">EXPLORE THE PRODUCT</span>
+      <h2>Try the interaction yourself.</h2>
+      <a class="btn" href="#studio">Back to live prototype ↑</a>
+      <a class="back-work" href="https://www.figma.com/design/hUpxsZ1pSLglLUM1TrJvQl/Zahra-Vakilifard---Product-Design-System---Case-Studies--2026-?node-id=0-1&t=5sNCKHK9g3HgN695-1" target="_blank" rel="noopener noreferrer">Open Figma File ↗</a>
+      <a class="back-work" href="../../index.html#work">See all four projects ↗</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <span>© Zahra Vakilifard · PULSE concept</span>
+    <a href="../../index.html">Back to portfolio ↑</a>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
