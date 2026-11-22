@@ -15,7 +15,14 @@
     .stage small{color:var(--muted)}
     .stage.active{background:#e9edff;border-color:var(--accent)}
     @media(max-width:650px){.journey{grid-template-columns:repeat(2,1fr)}}
-  </style>
+  
+/* SIGNAL / precision analytics workstation */
+body{--bg:#edf2f0;--ink:#142d28;--muted:#59746c;--line:#cbdcd5;--accent:#187b66;background:linear-gradient(115deg,#eaf2ee,#f8faf8 60%)}
+.top{border-color:#cbdcd5}.brand{letter-spacing:-.04em}.hero{position:relative;padding:90px 0 72px;border-bottom:1px solid #cbdcd5}.hero:after{content:'S / 01';position:absolute;right:0;top:65px;font:800 clamp(90px,15vw,230px) 'Space Grotesk';letter-spacing:-.1em;color:#d5e7df;z-index:-1}.hero h1{max-width:830px;color:#143c31}.hero .lede{max-width:570px}
+#experience{background:#102c27;border-radius:28px;padding:24px;margin:22px 0 80px;color:#e9f6ef;box-shadow:0 30px 80px #143d3030}#experience .layout{grid-template-columns:210px minmax(0,1fr);gap:16px;padding:0}#experience .side{background:#173b33;border-color:#2b5347;border-radius:17px;color:#fff}#experience .side h3{color:#b5d4c5}#experience .side button{color:#a9c8ba}#experience .side button.active,#experience .side button:hover{background:#b5f1cb;color:#173b33}#experience .side .note{color:#91b8a9}#experience .panel{background:#f9fcf9;color:#16372f;border-color:#dbe8e1;border-radius:16px}#experience .stat{background:#e9f2eb;border-left:3px solid #23936d}#experience .stat strong{font-size:clamp(29px,3vw,44px);color:#164e3d}#experience .stage{background:#eef5f0;border:1px solid #d7e6dd;border-radius:10px;transition:.2s}#experience .stage.active{background:#c6f4d9;border-color:#23936d;box-shadow:inset 0 0 0 1px #23936d}#experience .stage b{color:#238c6a}#experience .card{background:#f3f8f4;border-color:#d8e6dc}#experience .btn{background:#17745d}#experience .btn.secondary{background:#d9f3e2;color:#145c47}#experience .eyebrow{color:#187b66}
+@media(max-width:850px){#experience .layout{grid-template-columns:1fr}#experience .side{display:flex;flex-wrap:wrap}#experience .side h3,#experience .side p{width:100%}}@media(max-width:560px){#experience{padding:10px;border-radius:15px}.hero:after{opacity:.4}}
+
+</style>
 </head>
 <body>
 <div class="wrap">

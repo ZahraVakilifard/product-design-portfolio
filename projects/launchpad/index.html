@@ -25,7 +25,14 @@
     .choice small{color:var(--muted)}
     .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
     @media(max-width:1000px){.builder{grid-template-columns:1fr}}
-  </style>
+  
+/* LAUNCHPAD / calm, structured merchant configuration studio */
+body{--bg:#f2f4ec;--ink:#1b362e;--muted:#64776c;--line:#d5dfd2;--accent:#267453;background:linear-gradient(180deg,#eaf2e6 0,#f7f8f2 600px)}
+.hero{padding:85px 0 70px;display:grid;grid-template-columns:1.2fr .8fr;column-gap:40px;align-items:end}.hero .eyebrow,.hero h1,.hero .lede{grid-column:1}.hero h1{font-size:clamp(56px,7vw,105px);line-height:.95}.hero .pill{grid-row:4;justify-self:start}.hero:after{content:'BUILD → PREVIEW → LAUNCH';grid-column:2;grid-row:2/4;align-self:center;justify-self:center;max-width:270px;transform:rotate(-7deg);font:800 clamp(32px,4vw,60px)/1.15 'Space Grotesk';color:#90b69b}
+#experience{border:1px solid #d4e2d4;border-radius:25px;background:#e5ece3;padding:22px;margin-bottom:80px}#experience .layout{grid-template-columns:190px minmax(0,1fr);padding:0;gap:16px}#experience .side{background:#214637;border-color:#214637;color:white;border-radius:17px}#experience .side h3{color:#e7f6e8}#experience .side button{color:#b5d2c0;border-left:3px solid transparent;border-radius:4px}#experience .side button.active{color:#163e2d;background:#c9f29c;border-left-color:#c9f29c}#experience .side .note{color:#b5d2c0}#experience .builder{grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:16px}#experience .editor{background:#fffdf8;border-radius:17px}#experience .preview{background:#d8e4d7;border-radius:17px;position:relative}#experience .preview:before{content:'SHOPPER-FACING VIEW / SIMULATED';position:absolute;top:12px;right:22px;font:600 9px 'Space Grotesk';letter-spacing:.08em;color:#587465}#experience .widget{border-radius:10px;background:linear-gradient(140deg,#143c2c,#285943);transform:perspective(900px) rotateY(-3deg);box-shadow:12px 17px 0 #9eb8a3,0 30px 40px #173b2d22}#experience .choice{border-radius:9px}#experience .choice.active{background:#e0f5e6;border-color:#237d58}#experience .btn{background:#237453;border-radius:8px}#experience .eyebrow{color:#237453}
+@media(max-width:1100px){#experience .layout{grid-template-columns:1fr}#experience .side{display:flex;flex-wrap:wrap;gap:8px}#experience .side h3,#experience .side p{width:100%}#experience .side button{width:auto}}@media(max-width:850px){.hero{display:block}.hero:after{display:none}#experience .builder{grid-template-columns:1fr}}@media(max-width:560px){#experience{padding:9px}#experience .widget{transform:none}#experience .side button{font-size:12px}}
+
+</style>
 </head>
 <body>
 <div class="wrap">

@@ -28,7 +28,14 @@
     .phone .notice{background:#332b3e;color:#e9d7f6}
     @media(max-width:1000px){.loop-stage{grid-template-columns:1fr}.phone{max-width:370px;margin:auto;width:100%}}
     @media(max-width:560px){.loop-stage{padding:13px}.phone{padding:16px}}
-  </style>
+  
+/* LOOP / expressive mobile-first consumer product */
+body{--bg:#f6f0ff;--ink:#27143e;--muted:#72637d;--line:#dfd1ed;--accent:#7b44e6;background:radial-gradient(circle at 85% 6%,#ead5ff,transparent 42%),#faf6ff}
+.hero{position:relative;padding:95px 0 85px}.hero:before{content:'✳';position:absolute;right:4%;top:38px;color:#d4b1fa;font:300 clamp(150px,20vw,310px) 'Space Grotesk';line-height:1;z-index:-1;transform:rotate(-18deg)}.hero h1{max-width:850px;font-size:clamp(55px,7.5vw,110px);line-height:.97}.hero .lede{max-width:570px}
+#experience{background:#e9d6ff;border-radius:36px;padding:20px;margin-bottom:85px}#experience .layout{grid-template-columns:1fr;gap:12px;padding:0}#experience .side{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff9;border:0;border-radius:18px;padding:16px 20px}#experience .side h3{margin:0 18px 0 0;font-size:15px}#experience .side button{width:auto;margin:0;border-radius:50px;padding:10px 15px;background:#fff;color:#553577}#experience .side button.active{background:#27143e;color:#fff}#experience .side .note{width:100%;margin:0}#experience .loop-stage{border-radius:26px;background:radial-gradient(circle at 74% 30%,#cda2ff,transparent 48%),linear-gradient(140deg,#b5a0ec,#e5c9fa);grid-template-columns:minmax(280px,380px) minmax(0,1fr);padding:50px;min-height:650px}#experience .phone{transform:rotate(-2deg);transition:transform .3s;box-shadow:18px 28px 0 #6e50b74a,0 32px 60px #2d1d5055;border:8px solid #20172b;border-radius:43px}#experience .phone:hover{transform:rotate(0)}#experience .balance{background:#d8ff6f}#experience .guide{background:#ffffffdf;padding:38px;border-radius:24px;box-shadow:0 20px 50px #462a7322}#experience .guide h2{font-size:clamp(35px,4vw,59px)}#experience .statrow{grid-template-columns:repeat(3,minmax(0,1fr))}#experience .stat{background:#f2e9ff;padding:13px}#experience .stat strong{font-size:clamp(17px,2vw,25px);overflow-wrap:anywhere}#experience .eyebrow{color:#7b44e6}
+@media(max-width:1000px){#experience .loop-stage{grid-template-columns:1fr;padding:28px}#experience .phone{transform:none;max-width:390px;width:100%;margin:auto}#experience .guide{padding:24px}}@media(max-width:560px){#experience{padding:8px;border-radius:18px}#experience .loop-stage{padding:18px}#experience .statrow{grid-template-columns:1fr 1fr}#experience .side button{font-size:12px}}
+
+</style>
 </head>
 <body>
 <div class="wrap">
