@@ -22,6 +22,25 @@ body{--bg:#edf2f0;--ink:#142d28;--muted:#59746c;--line:#cbdcd5;--accent:#187b66;
 #experience{background:#102c27;border-radius:28px;padding:24px;margin:22px 0 80px;color:#e9f6ef;box-shadow:0 30px 80px #143d3030}#experience .layout{grid-template-columns:210px minmax(0,1fr);gap:16px;padding:0}#experience .side{background:#173b33;border-color:#2b5347;border-radius:17px;color:#fff}#experience .side h3{color:#b5d4c5}#experience .side button{color:#a9c8ba}#experience .side button.active,#experience .side button:hover{background:#b5f1cb;color:#173b33}#experience .side .note{color:#91b8a9}#experience .panel{background:#f9fcf9;color:#16372f;border-color:#dbe8e1;border-radius:16px}#experience .stat{background:#e9f2eb;border-left:3px solid #23936d}#experience .stat strong{font-size:clamp(29px,3vw,44px);color:#164e3d}#experience .stage{background:#eef5f0;border:1px solid #d7e6dd;border-radius:10px;transition:.2s}#experience .stage.active{background:#c6f4d9;border-color:#23936d;box-shadow:inset 0 0 0 1px #23936d}#experience .stage b{color:#238c6a}#experience .card{background:#f3f8f4;border-color:#d8e6dc}#experience .btn{background:#17745d}#experience .btn.secondary{background:#d9f3e2;color:#145c47}#experience .eyebrow{color:#187b66}
 @media(max-width:850px){#experience .layout{grid-template-columns:1fr}#experience .side{display:flex;flex-wrap:wrap}#experience .side h3,#experience .side p{width:100%}}@media(max-width:560px){#experience{padding:10px;border-radius:15px}.hero:after{opacity:.4}}
 
+
+/* SIGNAL — enterprise analytics product UI, intentionally independent from portfolio styling */
+.signal-workspace{background:#102b26;border:1px solid #24483e;border-radius:24px;overflow:hidden;margin:20px 0 85px;box-shadow:0 32px 75px #0b2c2330;color:#18352e}
+.signal-shell{display:grid;grid-template-columns:224px minmax(0,1fr);min-height:900px}
+.signal-rail{background:#102c27;color:#e5f4e9;padding:25px 16px;display:flex;flex-direction:column;gap:7px}
+.signal-brand{font:700 20px 'Space Grotesk';letter-spacing:-.06em;padding:4px 10px 34px}.signal-brand-icon{color:#a4e7be;font-size:26px;margin-right:5px}.signal-brand small{display:block;font:500 9px 'DM Sans';letter-spacing:.23em;color:#80a99a;margin-left:36px}
+.rail-caption{font:700 10px 'DM Sans';letter-spacing:.16em;color:#789f90;padding:12px 12px}.rail-link{padding:13px 12px;border-radius:9px;text-decoration:none;color:#b0cbbd;font-weight:600;font-size:13px}.rail-link:hover,.rail-link.selected{background:#275346;color:#e7ffe9}.rail-bottom{margin-top:auto;border-top:1px solid #33564a;padding:22px 10px 8px;font-size:12px}.rail-bottom small{color:#86a99a}.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#9ce2ae;margin-right:7px}
+.signal-content{min-width:0;background:#f5f8f5;padding:0 29px 30px}.signal-topbar{height:55px;border-bottom:1px solid #e0e9e3;display:flex;align-items:center;justify-content:space-between;color:#7c968b;font:700 10px 'DM Sans';letter-spacing:.12em}.signal-topbar b{margin:0 8px;color:#b1c3b9}.live-chip{border:1px solid #c9dfd1;border-radius:40px;padding:6px 10px;color:#347b5c;background:#ebf7ee}
+.signal-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:31px 0 20px}.signal-heading h2{font-size:clamp(29px,3vw,42px);margin:7px 0 9px;letter-spacing:-.055em}.signal-heading p{margin:0;font-size:13px}.heading-period{color:#32a578}.signal-export,.signal-reset{border:1px solid #bfd6c9;background:#fff;border-radius:9px;padding:11px 15px;color:#1c5540;font-size:12px;font-weight:700;white-space:nowrap}.signal-export:hover,.signal-reset:hover{background:#e3f3e8}
+.signal-filterbar{display:flex;align-items:end;flex-wrap:wrap;gap:11px;padding:14px;background:#fff;border:1px solid #e1eae3;border-radius:13px;margin-bottom:17px}.signal-filterbar label{font:700 10px 'DM Sans';color:#789487;letter-spacing:.08em;display:flex;flex-direction:column;gap:6px;flex:1;min-width:145px}.signal-filterbar select{font:600 12px 'DM Sans';color:#264b3e;border:1px solid #d9e6dc;background:#f8fbf8;padding:10px 9px;border-radius:8px;width:100%}.signal-reset{padding:10px 13px}
+.signal-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:15px}.signal-kpi{background:#fff;border:1px solid #e1eae3;border-radius:13px;padding:19px;min-width:0}.signal-kpi .kpi-label{font-size:11px;color:#789184;font-weight:700}.signal-kpi strong{display:block;font:700 clamp(22px,2.3vw,34px) 'Space Grotesk';letter-spacing:-.06em;margin:11px 0 6px;color:#1b4436}.signal-kpi .kpi-sub{font-size:10px;color:#7d968b}.signal-kpi .kpi-indicator{display:inline-block;font-size:10px;font-weight:700;background:#e5f6e9;color:#24764e;border-radius:5px;padding:3px 6px;margin-right:5px}
+.signal-analytics-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:14px}.signal-panel{background:#fff;border:1px solid #e1eae3;border-radius:14px;padding:20px;min-width:0}.signal-panel-head{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:18px}.signal-panel h3{font-size:18px;letter-spacing:-.04em;margin:5px 0 0}.signal-eyebrow{font:700 9px 'DM Sans';letter-spacing:.13em;color:#6d9d82}.signal-legend{font-size:10px;color:#6d8478;white-space:nowrap}.signal-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#206d57;margin:0 4px 0 8px}.signal-legend i.mint{background:#b1e4b9}.chart-foot{font-size:10px;color:#83998d;margin-top:13px}.trend-chart svg{width:100%;height:auto;display:block;overflow:visible}.trend-chart circle{cursor:crosshair}.trend-chart circle:focus{outline:none;stroke:#122f27;stroke-width:3}.trend-tooltip{min-height:19px;font-size:11px;color:#285d47;font-weight:600}
+.funnel-chart{display:grid;gap:14px}.funnel-label{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#587367;margin-bottom:6px}.funnel-label b{color:#264f3e}.funnel-track{height:12px;background:#e8f0eb;border-radius:3px;overflow:hidden}.funnel-fill{height:100%;background:linear-gradient(90deg,#1b6c52,#8bd6a5);border-radius:3px;transition:width .25s}
+.heatmap-wrap{overflow:auto}.heatmap-table{width:100%;border-spacing:5px;border-collapse:separate;min-width:390px}.heatmap-table th{font-size:10px;color:#789286;font-weight:700;text-align:center}.heatmap-table th:first-child{text-align:left}.heatmap-table td{padding:11px 5px;text-align:center;font-size:10px;font-weight:700;border-radius:5px;color:#18452f}.heatmap-table td:first-child{background:transparent!important;text-align:left;color:#597468;font-weight:600;white-space:nowrap}.signal-tag{font:700 9px 'DM Sans';letter-spacing:.08em;background:#edf6ef;color:#4d8062;border-radius:6px;padding:7px}
+.insight-cards{display:grid;gap:10px}.insight-card{border:1px solid #e0eae3;border-radius:9px;padding:12px 13px;background:#fbfdfb}.insight-card strong{font-size:12px;display:block;color:#244a3c}.insight-card p{font-size:11px;line-height:1.5;margin:5px 0 0}.insight-type{display:inline-block;font:700 9px 'DM Sans';letter-spacing:.08em;color:#a66d2e;margin-bottom:5px}.signal-hypothesis{margin-top:13px;width:100%;border:1px solid #b7d9c6;background:#e6f5eb;color:#216448;border-radius:8px;padding:11px;font-weight:700;font-size:12px}.signal-scenario{margin-top:10px;padding:12px;border-radius:8px;background:#eaf7ee;color:#275a40;font-size:12px}
+.signal-segments{margin-top:14px}.segment-search input{padding:9px 12px;border:1px solid #d9e6dc;border-radius:8px;font-size:12px;max-width:190px}.signal-table-scroll{overflow-x:auto}.signal-table{border-collapse:collapse;width:100%;min-width:530px}.signal-table th{text-align:left;background:#f5f9f6;padding:12px;color:#82978a;font-size:10px;letter-spacing:.06em}.signal-table th button{background:none;border:0;padding:0;color:inherit;font:inherit;letter-spacing:inherit;cursor:pointer}.signal-table td{padding:14px 12px;border-bottom:1px solid #e9efea;font-size:12px;color:#365c4b}.signal-table td:first-child{font-weight:700;color:#214b39}.signal-table .row-status{display:inline-block;background:#e5f5e9;color:#347a4e;border-radius:30px;padding:4px 8px;font-size:10px;font-weight:700}.signal-table .row-status.watch{background:#fff2df;color:#9c6a27}.signal-disclaimer{font-size:11px;line-height:1.6;color:#7d9588;margin:18px 0 0}
+@media(max-width:1050px){.signal-shell{grid-template-columns:170px minmax(0,1fr)}.signal-content{padding:0 16px 20px}.signal-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.signal-analytics-grid{grid-template-columns:1fr}.signal-rail{padding:20px 10px}}
+@media(max-width:650px){.signal-workspace{border-radius:14px}.signal-shell{display:block}.signal-rail{display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:4px;padding:12px}.signal-brand{padding:4px 8px;font-size:15px;width:100%}.signal-brand small,.rail-caption,.rail-bottom{display:none}.rail-link{font-size:11px;padding:8px}.signal-heading{align-items:flex-start;flex-direction:column}.signal-kpis{gap:8px}.signal-kpi{padding:13px}.signal-panel{padding:14px}.signal-legend{display:none}}
+
 </style>
 </head>
 <body>
@@ -45,55 +64,30 @@ body{--bg:#edf2f0;--ink:#142d28;--muted:#59746c;--line:#cbdcd5;--accent:#187b66;
     <span class="pill">Responsive UI</span>
   </section>
 
-  <div id="experience">
-    <div class="layout">
-      <aside class="side">
-        <h3>Explore a cohort</h3>
-        <button class="active" data-cohort="new">First-time buyers</button>
-        <button data-cohort="repeat">Repeat buyers</button>
-        <button data-cohort="at-risk">At-risk customers</button>
-        <p class="note">Select a cohort to compare behavior. Click a journey stage for evidence and suggested next steps.</p>
+  <div id="experience" class="signal-workspace">
+    <div class="signal-shell">
+      <aside class="signal-rail" aria-label="Analytics navigation">
+        <div class="signal-brand"><span class="signal-brand-icon">◈</span> SIGNAL <small>INTELLIGENCE</small></div>
+        <div class="rail-caption">WORKSPACE</div>
+        <a class="rail-link selected" href="#overview">◫ &nbsp; Overview</a>
+        <a class="rail-link" href="#retention">▥ &nbsp; Retention</a>
+        <a class="rail-link" href="#segments">◉ &nbsp; Segments</a>
+        <a class="rail-link" href="#insights">✧ &nbsp; Insights</a>
+        <div class="rail-bottom"><span class="status-dot"></span> Demo workspace<br><small>Illustrative, synthetic data</small></div>
       </aside>
-      <main class="main">
-        <div class="panel">
-          <div class="panelhead">
-            <div>
-              <div class="eyebrow">Customer intelligence / demo</div>
-              <h2 id="cohortTitle">First-time buyers</h2>
-            </div>
-            <select id="period" aria-label="Analysis period">
-              <option value="30">Last 30 days</option>
-              <option value="90">Last 90 days</option>
-            </select>
-          </div>
-          <div class="statrow">
-            <div class="stat"><small>Customers in cohort</small><strong id="customers">2,480</strong></div>
-            <div class="stat"><small>Second purchase rate</small><strong id="repeatRate">28%</strong></div>
-            <div class="stat"><small>Median days to reorder</small><strong id="days">46</strong></div>
-          </div>
+      <main class="signal-content" id="overview">
+        <div class="signal-topbar"><span>WORKSPACE <b>/</b> CUSTOMER INTELLIGENCE</span><span class="live-chip"><span class="status-dot"></span> DEMO DATA</span></div>
+        <div class="signal-heading"><div><div class="eyebrow">PERFORMANCE / OVERVIEW</div><h2>Customer intelligence<span class="heading-period">.</span></h2><p>Understand retention, find friction, and prioritize what to investigate next.</p></div><button class="signal-export" id="exportCsv" type="button">↓ Export CSV</button></div>
+        <div class="signal-filterbar"><label>COHORT <select id="cohortFilter"><option value="new">First-time buyers</option><option value="repeat">Repeat buyers</option><option value="at-risk">At-risk customers</option></select></label><label>TIME RANGE <select id="period"><option value="30">Last 30 days</option><option value="90">Last 90 days</option></select></label><label>CHANNEL <select id="channelFilter"><option value="all">All channels</option><option value="organic">Organic</option><option value="paid">Paid</option><option value="email">Email</option></select></label><button id="resetFilters" class="signal-reset" type="button">↺ Reset</button></div>
+        <div class="signal-kpis" id="kpiCards" aria-live="polite"></div>
+        <div class="signal-analytics-grid" id="retention">
+          <section class="signal-panel signal-trend"><div class="signal-panel-head"><div><span class="signal-eyebrow">PERFORMANCE TREND</span><h3>Revenue &amp; returning customers</h3></div><span class="signal-legend"><i></i> Revenue <i class="mint"></i> Returning</span></div><div id="trendChart" class="trend-chart" role="img" aria-label="Illustrative revenue and returning customer trend"></div><div class="chart-foot">Illustrative indexed trends · hover or focus on a point to inspect values</div></section>
+          <section class="signal-panel"><div class="signal-panel-head"><div><span class="signal-eyebrow">CUSTOMER JOURNEY</span><h3>Conversion funnel</h3></div></div><div id="funnelChart" class="funnel-chart"></div><div class="chart-foot">Percentages represent a synthetic example journey</div></section>
+          <section class="signal-panel"><div class="signal-panel-head"><div><span class="signal-eyebrow">RETENTION EXPLORER</span><h3>Weekly cohort retention</h3></div><span class="signal-tag">W0–W5</span></div><div id="heatmap" class="heatmap-wrap"></div><div class="chart-foot">Cells show the simulated percentage returning in each week</div></section>
+          <section class="signal-panel" id="insights"><div class="signal-panel-head"><div><span class="signal-eyebrow">DECISION SUPPORT</span><h3>Signals &amp; hypotheses</h3></div><span class="signal-tag">NOT PREDICTIONS</span></div><div id="insightCards" class="insight-cards"></div><button id="simulate" class="signal-hypothesis" type="button">+ Draft a testable hypothesis</button><div id="scenario" class="signal-scenario hidden" aria-live="polite"></div></section>
         </div>
-        <div class="panel">
-          <div class="panelhead">
-            <h3>Where does momentum change?</h3>
-            <span class="pill">Select a stage ↓</span>
-          </div>
-          <div class="journey" id="journey">
-            <button class="stage active" data-stage="0"><b>01</b><strong>First order</strong><small>100% start</small></button>
-            <button class="stage" data-stage="1"><b>02</b><strong>Post-purchase</strong><small>Engagement</small></button>
-            <button class="stage" data-stage="2"><b>03</b><strong>Return window</strong><small>Opportunity</small></button>
-            <button class="stage" data-stage="3"><b>04</b><strong>Second order</strong><small>Retention</small></button>
-          </div>
-          <div class="grid2" style="margin-top:18px">
-            <div class="card"><div class="eyebrow">Selected stage</div><h3 id="stageTitle"></h3><p id="stageDesc"></p></div>
-            <div class="card"><div class="eyebrow">Explore an action</div><h3 id="actionTitle"></h3><p id="actionDesc"></p><button class="btn secondary" id="simulate">Compare hypothetical scenario</button></div>
-          </div>
-          <div id="scenario" class="notice hidden" aria-live="polite"></div>
-        </div>
-        <div class="panel">
-          <div class="eyebrow">Reading the evidence</div>
-          <h3>Signals are not causes</h3>
-          <p>Changes in engagement may indicate where to investigate. This prototype deliberately separates observations from hypotheses and avoids claiming that a suggested action will improve retention.</p>
-        </div>
+        <section class="signal-panel signal-segments" id="segments"><div class="signal-panel-head"><div><span class="signal-eyebrow">AUDIENCE INTELLIGENCE</span><h3>Customer segments</h3></div><label class="segment-search"><span class="sr-only">Search segments</span><input id="segmentSearch" type="search" placeholder="Search segments…"></label></div><div class="signal-table-scroll"><table class="signal-table"><thead><tr><th><button data-sort="name">SEGMENT ↕</button></th><th><button data-sort="customers">CUSTOMERS ↕</button></th><th><button data-sort="retention">RETENTION ↕</button></th><th><button data-sort="revenue">REVENUE ↕</button></th><th>STATUS</th></tr></thead><tbody id="segmentRows"></tbody></table></div><div class="chart-foot">Synthetic segment data · sorting and search operate locally</div></section>
+        <p class="signal-disclaimer">SIGNAL is a self-initiated product design concept. All figures are illustrative, generated locally for the prototype. Observations are not evidence of causation or real customer outcomes.</p>
       </main>
     </div>
   </div>
