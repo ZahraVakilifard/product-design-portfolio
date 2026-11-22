@@ -1,38 +1,26 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
-(() => {
+function openArt(el) {
   const box = document.getElementById("lightbox");
   const img = document.getElementById("lightbox-img");
   const title = document.getElementById("lightbox-title");
   const caption = document.getElementById("lightbox-caption");
-  const closeBtn = document.getElementById("lightbox-close");
   if (!box || !img) return;
+  img.src = el.src;
+  img.alt = el.alt || "";
+  title.textContent = el.dataset.title || "";
+  caption.textContent = el.dataset.caption || "";
+  box.classList.add("open");
+}
 
-  document.querySelectorAll(".art-thumb").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      img.src = btn.dataset.art;
-      img.alt = btn.dataset.title || "";
-      title.textContent = btn.dataset.title || "";
-      caption.textContent = btn.dataset.caption || "";
-      box.classList.add("open");
-      box.setAttribute("aria-hidden", "false");
-    });
-  });
+function closeArt() {
+  const box = document.getElementById("lightbox");
+  if (box) box.classList.remove("open");
+}
 
-  function closeBox() {
-    box.classList.remove("open");
-    box.setAttribute("aria-hidden", "true");
-    img.src = "";
-  }
-
-  closeBtn?.addEventListener("click", closeBox);
-  box.addEventListener("click", (e) => {
-    if (e.target === box) closeBox();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && box.classList.contains("open")) closeBox();
-  });
-})();
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeArt();
+});
 
 (() => {
   const canvas = document.getElementById("hero-canvas");

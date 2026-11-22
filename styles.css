@@ -265,26 +265,18 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
   align-items: center;
 }
 .art-thumb {
-  background: none;
-  border: 0;
-  padding: 0;
-  cursor: zoom-in;
-  border-radius: 8px;
-  overflow: hidden;
-  display: block;
-}
-.art-thumb img {
   width: 88px;
   height: 88px;
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--border);
   display: block;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  cursor: zoom-in;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
-.art-thumb:hover img {
+.art-thumb:hover {
   transform: scale(1.05);
-  opacity: 0.9;
+  border-color: var(--lime);
 }
 .pillar span { display: block; font: 10px 'DM Mono'; letter-spacing: 0.1em; color: var(--lime); margin-bottom: 6px; }
 .pillar strong { display: block; font: 600 18px 'Space Grotesk'; margin-bottom: 4px; color: var(--ink); }
@@ -294,22 +286,23 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 9999;
   background: rgba(10, 11, 9, 0.92);
   backdrop-filter: blur(10px);
   display: none;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   padding: 24px;
 }
-.lightbox.open { display: grid; }
+.lightbox.open { display: flex; }
 .lightbox-inner {
   position: relative;
-  max-width: 760px;
+  max-width: 720px;
   width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 20px;
+  padding: 22px;
   text-align: center;
 }
 .lightbox-inner img {
@@ -318,7 +311,7 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
   max-width: 100%;
   border-radius: 10px;
   display: block;
-  margin: 0 auto 16px;
+  margin: 0 auto 14px;
 }
 .lightbox-meta strong {
   display: block;
@@ -337,7 +330,7 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
   border: 1px solid var(--border);
   background: var(--dark);
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
 }
 .lightbox-close:hover { border-color: var(--lime); color: var(--lime); }
@@ -397,12 +390,12 @@ footer {
   .visual { height: 250px; }
   .project-info, .craft { padding: 24px; }
   .pillar { grid-template-columns: 72px 1fr; gap: 14px; }
-  .art-thumb img { width: 72px; height: 72px; }
+  .art-thumb { width: 72px; height: 72px; }
   .pulse-poster { width: 72%; }
   footer { flex-wrap: wrap; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .project, .art-thumb img, .roundlink, .primary-link { transition: none; }
+  .project, .art-thumb, .roundlink, .primary-link { transition: none; }
 }

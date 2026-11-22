@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Product Design Portfolio of Zahra Vakilifard — Systems thinking, interactive prototypes, and human-centered interfaces.">
   <title>Zahra Vakilifard — Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -191,9 +194,7 @@
         </div>
         <div class="craft-pillars">
           <div class="pillar">
-            <button type="button" class="art-thumb" data-art="images/graphite.jpg" data-title="Graphite Study — Metallic Pitcher" data-caption="Observation of tonal hierarchy, specular highlights, and surface weight.">
-              <img src="images/graphite.jpg" alt="Graphite pencil study of a metallic pitcher by Zahra Vakilifard" loading="lazy">
-            </button>
+            <img class="art-thumb" src="images/graphite.jpg" alt="Graphite pencil study of a metallic pitcher by Zahra Vakilifard" data-title="Graphite Study — Metallic Pitcher" data-caption="Observation of tonal hierarchy, specular highlights, and surface weight." onclick="openArt(this)">
             <div>
               <span>GRAPHITE &amp; VALUE</span>
               <strong>Tonal Hierarchy</strong>
@@ -201,9 +202,7 @@
             </div>
           </div>
           <div class="pillar">
-            <button type="button" class="art-thumb" data-art="images/watercolor.jpg" data-title="Watercolor Study — Courtyard &amp; Reflection Pool" data-caption="Exploration of architectural proportion, layered transparency, and negative space.">
-              <img src="images/watercolor.jpg" alt="Watercolor painting of courtyard architecture and reflection pool by Zahra Vakilifard" loading="lazy">
-            </button>
+            <img class="art-thumb" src="images/watercolor.jpg" alt="Watercolor painting of courtyard architecture and reflection pool by Zahra Vakilifard" data-title="Watercolor Study — Courtyard &amp; Reflection Pool" data-caption="Exploration of architectural proportion, layered transparency, and negative space." onclick="openArt(this)">
             <div>
               <span>WATERCOLOR &amp; SPACE</span>
               <strong>Restraint &amp; Balance</strong>
@@ -231,9 +230,9 @@
     <a href="#top">BACK TO TOP ↑</a>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Artwork preview">
+  <div class="lightbox" id="lightbox" onclick="if(event.target===this)closeArt()">
     <div class="lightbox-inner">
-      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close preview">✕</button>
+      <button type="button" class="lightbox-close" onclick="closeArt()" aria-label="Close preview">✕</button>
       <img id="lightbox-img" src="" alt="">
       <div class="lightbox-meta">
         <strong id="lightbox-title"></strong>
