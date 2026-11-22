@@ -191,7 +191,9 @@
         </div>
         <div class="craft-pillars">
           <div class="pillar">
-            <img src="images/graphite.jpg" alt="Graphite pencil study of a metallic pitcher by Zahra Vakilifard" loading="lazy">
+            <button type="button" class="art-thumb" data-art="images/graphite.jpg" data-title="Graphite Study — Metallic Pitcher" data-caption="Observation of tonal hierarchy, specular highlights, and surface weight.">
+              <img src="images/graphite.jpg" alt="Graphite pencil study of a metallic pitcher by Zahra Vakilifard" loading="lazy">
+            </button>
             <div>
               <span>GRAPHITE &amp; VALUE</span>
               <strong>Tonal Hierarchy</strong>
@@ -199,7 +201,9 @@
             </div>
           </div>
           <div class="pillar">
-            <img src="images/watercolor.jpg" alt="Watercolor painting of courtyard architecture and reflection pool by Zahra Vakilifard" loading="lazy">
+            <button type="button" class="art-thumb" data-art="images/watercolor.jpg" data-title="Watercolor Study — Courtyard &amp; Reflection Pool" data-caption="Exploration of architectural proportion, layered transparency, and negative space.">
+              <img src="images/watercolor.jpg" alt="Watercolor painting of courtyard architecture and reflection pool by Zahra Vakilifard" loading="lazy">
+            </button>
             <div>
               <span>WATERCOLOR &amp; SPACE</span>
               <strong>Restraint &amp; Balance</strong>
@@ -226,6 +230,17 @@
     <span>DESIGNED &amp; CODED — <span id="year"></span></span>
     <a href="#top">BACK TO TOP ↑</a>
   </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Artwork preview">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close preview">✕</button>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-meta">
+        <strong id="lightbox-title"></strong>
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
