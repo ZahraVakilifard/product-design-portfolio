@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOOP — Interactive Mobile Reward Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif; background: #f3f4f6; color: #18181b;
+      min-height: 100vh; display: flex; flex-direction: column; align-items: center;
+    }
+    .top-bar {
+      width: 100%; background: #ffffff; border-bottom: 1px solid #e5e7eb;
+      padding: 14px 28px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .top-bar a { text-decoration: none; color: #52525b; font-size: 0.88rem; font-weight: 500; }
+    .phone-frame {
+      width: 390px; max-width: 94vw; background: #18181b; color: #ffffff;
+      border-radius: 36px; padding: 24px; margin: 28px 0;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18); border: 6px solid #27272a;
+    }
+    .wallet-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+    }
+    .balance-pill {
+      background: #27272a; padding: 8px 14px; border-radius: 999px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: #bef264;
+    }
+    h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; line-height: 1.15; margin-bottom: 8px; }
+    .sub { color: #a1a1aa; font-size: 0.88rem; margin-bottom: 20px; }
+    .reward-selector { display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px; }
+    .reward-option {
+      background: #27272a; border: 2px solid transparent; border-radius: 18px;
+      padding: 16px; cursor: pointer; transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .reward-option:hover { transform: scale(1.015); }
+    .reward-option.active {
+      background: #bef264; color: #18181b; transform: scale(1.02);
+    }
+    .reward-option strong { display: block; font-size: 1rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .reward-option span { font-size: 0.8rem; opacity: 0.8; }
+    .pts-cost { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.9rem; }
+    .cart-preview {
+      background: #27272a; border-radius: 18px; padding: 16px; margin-bottom: 20px;
+    }
+    .cart-row { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 8px; color: #d4d4d8; }
+    .cart-total {
+      border-top: 1px dashed #3f3f46; padding-top: 10px; margin-top: 6px;
+      display: flex; justify-content: space-between; font-weight: 700; font-size: 1.05rem; color: #ffffff;
+    }
+    .redeem-btn {
+      width: 100%; padding: 16px; border: none; border-radius: 16px;
+      background: #bef264; color: #18181b; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800; font-size: 1rem; cursor: pointer; transition: transform 0.15s;
+    }
+    .redeem-btn:active { transform: scale(0.97); }
+    .redeem-btn.redeemed { background: #34d399; color: #064e3b; }
+    .math-bar {
+      text-align: center; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem; color: #a1a1aa; margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <strong>LOOP · Interactive Mobile Demo</strong>
+    <a href="../index.html">← Back to Portfolio</a>
+  </div>
+
+  <div class="phone-frame">
+    <div class="wallet-header">
+      <span style="font-weight: 700; letter-spacing: 0.04em;">LOOP WALLET</span>
+      <div class="balance-pill" id="balance-display">1,450 PTS</div>
+    </div>
+
+    <h1>Pick your perk for today's order.</h1>
+    <p class="sub">Tap a reward below to preview live savings on your $68.00 cart.</p>
+
+    <div class="reward-selector">
+      <div class="reward-option active" data-cost="1200" data-discount="15" data-label="$15 Mystery Merch Credit">
+        <div>
+          <strong>$15 Mystery Merch Credit</strong>
+          <span>Instant discount + limited sticker pack</span>
+        </div>
+        <div class="pts-cost">1,200 pts</div>
+      </div>
+
+      <div class="reward-option" data-cost="500" data-discount="9" data-label="Free Express Shipping">
+        <div>
+          <strong>Free Express Shipping</strong>
+          <span>2-day courier delivery ($9 value)</span>
+        </div>
+        <div class="pts-cost">500 pts</div>
+      </div>
+    </div>
+
+    <div class="cart-preview">
+      <div class="cart-row"><span>Active Cart (2 items)</span><span>$68.00</span></div>
+      <div class="cart-row" style="color: #bef264;"><span id="perk-name">$15 Mystery Merch Credit</span><span id="perk-value">-$15.00</span></div>
+      <div class="cart-total"><span>New Checkout Total</span><span id="final-total">$53.00</span></div>
+    </div>
+
+    <button class="redeem-btn" id="redeem-btn">Apply Reward to Cart</button>
+    <div class="math-bar" id="math-bar">1,450 − 1,200 = 250 pts remaining after checkout</div>
+  </div>
+
+  <script>
+    const totalPoints = 1450;
+    const cartSubtotal = 68;
+    let selectedCost = 1200;
+    let selectedDiscount = 15;
+    let selectedLabel = "$15 Mystery Merch Credit";
+
+    const options = document.querySelectorAll(".reward-option");
+    const redeemBtn = document.getElementById("redeem-btn");
+
+    function updateUI() {
+      document.getElementById("perk-name").textContent = selectedLabel;
+      document.getElementById("perk-value").textContent = `-$${selectedDiscount.toFixed(2)}`;
+      document.getElementById("final-total").textContent = `$${(cartSubtotal - selectedDiscount).toFixed(2)}`;
+      document.getElementById("math-bar").textContent =
+        `${totalPoints.toLocaleString()} − ${selectedCost.toLocaleString()} = ${(totalPoints - selectedCost).toLocaleString()} pts remaining`;
+      redeemBtn.textContent = "Apply Reward to Cart";
+      redeemBtn.classList.remove("redeemed");
+      document.getElementById("balance-display").textContent = `${totalPoints.toLocaleString()} PTS`;
+    }
+
+    options.forEach(opt => {
+      opt.addEventListener("click", () => {
+        options.forEach(o => o.classList.remove("active"));
+        opt.classList.add("active");
+        selectedCost = Number(opt.dataset.cost);
+        selectedDiscount = Number(opt.dataset.discount);
+        selectedLabel = opt.dataset.label;
+        updateUI();
+      });
+    });
+
+    redeemBtn.addEventListener("click", () => {
+      const remaining = totalPoints - selectedCost;
+      document.getElementById("balance-display").textContent = `${remaining.toLocaleString()} PTS`;
+      redeemBtn.textContent = "✓ Reward Applied to Checkout!";
+      redeemBtn.classList.add("redeemed");
+    });
+  </script>
+</body>
+</html>
