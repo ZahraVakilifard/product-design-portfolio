@@ -1,28 +1,3 @@
-'use strict';
-const stages=[
-  {label:'STAGE 01 / DISCOVER',title:'A strong first impression.',copy:'Explore the starting point of this illustrative customer journey.'},
-  {label:'STAGE 02 / FIRST ORDER',title:'The first conversion matters.',copy:'Compare where first-time shoppers progress and where they pause.'},
-  {label:'STAGE 03 / RETURN',title:'The second purchase is the challenge.',copy:'Only 33% of this fictional cohort returned. Explore possible reasons before recommending an action.'}
-];
-document.querySelectorAll('.journey-step').forEach(button=>button.addEventListener('click',()=>{
-  document.querySelectorAll('.journey-step').forEach(el=>el.classList.toggle('is-active',el===button));
-  const stage=stages[Number(button.dataset.stage)];
-  document.getElementById('insight-label').textContent=stage.label;
-  document.getElementById('insight-title').textContent=stage.title;
-  document.getElementById('insight-copy').textContent=stage.copy;
-}));
-const startingPoints=1450;
-document.querySelectorAll('.reward-option').forEach(button=>button.addEventListener('click',()=>{
-  document.querySelectorAll('.reward-option').forEach(el=>{const selected=el===button;el.classList.toggle('selected',selected);el.setAttribute('aria-pressed',String(selected));});
-  const cost=Number(button.dataset.cost);
-  document.getElementById('points-balance').textContent=(startingPoints-cost).toLocaleString('en-CA');
-  document.getElementById('selected-reward').textContent=button.dataset.name;
-  document.getElementById('reward-cost').textContent=`${cost.toLocaleString('en-CA')} points redeemed`;
-}));
-const amount=document.getElementById('reward-amount');
-amount.addEventListener('input',()=>{const value=`$${amount.value}`;document.getElementById('amount-label').textContent=value;document.getElementById('art-value').textContent=value;document.querySelector('.reward-art-bottom span').textContent=`GIVE ${value}, GET ${value}`;});
-document.querySelectorAll('.swatch').forEach(button=>button.addEventListener('click',()=>{
-  document.querySelectorAll('.swatch').forEach(el=>{const active=el===button;el.classList.toggle('active',active);el.setAttribute('aria-pressed',String(active));});
-  document.getElementById('reward-art').className=`reward-art theme-${button.dataset.theme}`;
-}));
-document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();
+(()=>{const slider=document.getElementById("depth"),output=document.getElementById("depth-value"),layers=[...document.querySelectorAll(".play-layer")];function change(){const v=Number(slider.value);output.textContent=v+"%";layers.forEach((el,i)=>{el.style.setProperty("--rot",`${v*(i%2?-1:1)*.95+i*12}deg`);el.style.setProperty("--sc",`${1-i*.18+v*.001*i}`)})}slider.addEventListener("input",change);change()})();
+(()=>{const canvas=document.getElementById("hero-canvas"),hero=document.querySelector(".hero");if(!canvas||!hero)return;const ctx=canvas.getContext("2d");if(!ctx)return;let w=0,h=0,dpr=1,queued=false;const reduce=matchMedia("(prefers-reduced-motion: reduce)");function resize(){const r=canvas.getBoundingClientRect();w=r.width;h=r.height;dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);request()}function draw(){queued=false;ctx.clearRect(0,0,w,h);const p=reduce.matches?0:Math.max(0,Math.min(1.4,scrollY/Math.max(hero.offsetHeight,1)));const cx=w*(w<650?.77:.72)+Math.sin(p*2)*w*.05,cy=h*.48+p*h*.08;const max=Math.max(w,h)*1.75;for(let i=0;i<58;i++){const depth=i/58;const size=max*Math.pow(.933,i+1)*(1+p*.12);const angle=i*.085+p*2.7;const x=cx+Math.sin(i*.14+p*2)*w*.05*depth;const y=cy+Math.cos(i*.12+p)*h*.06*depth;ctx.save();ctx.translate(x,y);ctx.rotate(angle);ctx.strokeStyle=`rgba(209,255,94,${(.52-depth*.37)*Math.min(1,size/35)})`;ctx.lineWidth=depth>.6?.8:1.3;ctx.strokeRect(-size/2,-size/2,size,size);ctx.restore()}for(let i=0;i<10;i++){const a=i*Math.PI/5+p*.3;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(a)*max,cy+Math.sin(a)*max);ctx.strokeStyle="rgba(209,255,94,.04)";ctx.stroke()}}function request(){if(!queued){queued=true;requestAnimationFrame(draw)}}addEventListener("scroll",request,{passive:true});addEventListener("resize",resize,{passive:true});reduce.addEventListener?.("change",request);resize()})();
